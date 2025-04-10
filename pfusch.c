@@ -71,11 +71,11 @@ int main(int argc, char * argv[]) {
     int wstatus = 0;
     pid_t const waited = wait(&wstatus);
     if(WIFEXITED(wstatus)) {
-        printf("%d child %d exited normally with return code %d\n", getpid(), waited, WEXITSTATUS(wstatus) )
+        printf("%d child %d exited normally with return code %d\n", getpid(), waited, WEXITSTATUS(wstatus));
     } else if (WIFSIGNALED(wstatus)){
         printf("%d Child %d terminated with signal %d\n", getpid(), waited, WTERMSIG(wstatus));
     } else {
-        printf("%d Child %d is terminated not normally\n", getpid(), waited());
+        printf("%d Child %d is terminated not normally\n", getpid(), waited);
     }
 
     printf("All children are back\n");
